@@ -46,7 +46,7 @@ public class MainTest {
         hybridCar = new HybridCar("Test", "test", 10, 5, 4);
     }
 
-    @DisplayName("Car sınıf değişkenleri doğru access modifier değerlerine sahip mi ?")
+    @DisplayName("CarSkeleton sınıf değişkenleri doğru access modifier değerlerine sahip mi ?")
     @Test
     public void testCarAccessModifiers() throws NoSuchFieldException {
         Field nameField = car.getClass().getDeclaredField("name");
@@ -60,14 +60,14 @@ public class MainTest {
         assertEquals(wheelsField.getModifiers(), 2);
     }
 
-    @DisplayName("Car sınıf değişkenleri doğru type değerlerine sahip mi ?")
+    @DisplayName("CarSkeleton sınıf değişkenleri doğru type değerlerine sahip mi ?")
     @Test
     public void testLampAccessModifiers() throws NoSuchFieldException {
         assertThat(car.getName(), instanceOf(String.class));
         assertThat(car.getCylinders(), instanceOf(Integer.class));
     }
 
-    @DisplayName("Car startEngine metodu doğru çalışıyor mu ?")
+    @DisplayName("CarSkeleton startEngine metodu doğru çalışıyor mu ?")
     @Test
     public void testStartEngineMethod() throws NoSuchFieldException {
         PrintStream saveOut = System.out;
@@ -77,7 +77,7 @@ public class MainTest {
         assertThat(out.toString(), containsString(car.getClass().getSimpleName()));
     }
 
-    @DisplayName("Car accelerate metodu doğru çalışıyor mu ?")
+    @DisplayName("CarSkeleton accelerate metodu doğru çalışıyor mu ?")
     @Test
     public void testAccelerate() throws NoSuchFieldException {
         PrintStream saveOut = System.out;
@@ -87,7 +87,7 @@ public class MainTest {
         assertThat(out.toString(), containsString(car.getClass().getSimpleName()));
     }
 
-    @DisplayName("Car brake metodu doğru çalışıyor mu ?")
+    @DisplayName("CarSkeleton brake metodu doğru çalışıyor mu ?")
     @Test
     public void testBrake() throws NoSuchFieldException {
         PrintStream saveOut = System.out;
@@ -136,7 +136,7 @@ public class MainTest {
     public void testGasPoweredCar() throws NoSuchMethodException {
         assertThat(gasPoweredCar.getName(), instanceOf(String.class));
         assertThat(gasPoweredCar.getDescription(), instanceOf(String.class));
-        assertThat(gasPoweredCar.getAverageKmPerLiter(), instanceOf(Double.class));
+        assertThat(gasPoweredCar.getAvgKmPerLitre(), instanceOf(Double.class));
         assertThat(gasPoweredCar.getCylinders(), instanceOf(Integer.class));
     }
 
